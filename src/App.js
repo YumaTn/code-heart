@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
      <Routes>
-      <Route path='/' element={<Home/>}/>
+      <Route path='/code-heart' element={<Home/>}/>
       <Route path='/Heart' element={<HeartAnimation/>}/>
      </Routes>
      </BrowserRouter>
