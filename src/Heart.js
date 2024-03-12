@@ -29,7 +29,7 @@ const HeartAnimation = () => {
             if (loaded) return;
             loaded = true;
             const mobile = isDevice;
-            const koef = mobile ? 0.5 : 1;
+            const koef = mobile ? 0.3 : 1;
             const canvas = document.getElementById('heart');
             const ctx = canvas.getContext('2d');
             let width = canvas.width = koef * window.innerWidth;
