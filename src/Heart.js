@@ -29,11 +29,11 @@ const HeartAnimation = () => {
             if (loaded) return;
             loaded = true;
             const mobile = isDevice;
-            const koef = mobile ? 0.3 : 1;
+            const koef = mobile ? 0.3 : 1; // Adjusted koef value for mobile responsiveness
             const canvas = document.getElementById('heart');
             const ctx = canvas.getContext('2d');
-            let width = canvas.width = koef * window.innerWidth;
-            let height = canvas.height = koef * window.innerHeight;
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
             const rand = Math.random;
             ctx.fillStyle = "rgba(0,0,0,1)";
             ctx.fillRect(0, 0, width, height);
@@ -46,8 +46,8 @@ const HeartAnimation = () => {
             };
 
             window.addEventListener('resize', () => {
-                width = canvas.width = koef * window.innerWidth;
-                height = canvas.height = koef * window.innerHeight;
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
                 ctx.fillStyle = "rgba(0,0,0,1)";
                 ctx.fillRect(0, 0, width, height);
             });
@@ -153,7 +153,7 @@ const HeartAnimation = () => {
         };
     }, []);
 
-    return <canvas style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh' }} id="heart"></canvas>;
+    return <canvas style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }} id="heart"></canvas>;
 }
 
 export default HeartAnimation;
